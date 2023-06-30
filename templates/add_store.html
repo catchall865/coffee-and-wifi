@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+{% import 'bootstrap/wtf.html' as wtf %} {% extends 'base.html' %} {% block
+content %}
+<div class="container-fluid intro-container">
+  <div class="intro-bg container-fluid">
+    {% with messages = get_flashed_messages() %} {% if messages %} {% for
+    message in messages %}
+    <div class="alert alert-dark" role="alert">{{ message }}</div>
+    {% endfor %} {% endif %} {% endwith %}
+  </div>
+  <div class="intro-text">
+    <p>ADD STORE</p>
+  </div>
+</div>
+<div class="container-fluid main-form">
+  <div class="container-fluid text-center">
+  <form method="POST" action="{{ url_for('home') }}">
+    {{ form.csrf_token }}
+    <div class="row">
+      <div class="col">
+        <p class="form-label-custom">{{ form.name.label }}<br /></p>
+        <p class="form-field-custom">{{ form.name(size=40) }}<br /></p>
+        <p class="form-label-custom">{{ form.maps_url.label }}<br /></p>
+        <p class="form-field-custom">{{ form.maps_url(size=40) }}<br /></p>
+        <p class="form-label-custom">{{ form.seating.label }}<br /></p>
+        <p class="form-field-custom">{{ form.seating }}<br /></p>
+        <p class="form-label-custom">{{ form.wifi_rating.label }}<br /></p>
+        <p class="form-field-custom">{{ form.wifi_rating }}<br /></p>
+        <p class="form-label-custom">{{ form.power_rating.label }}<br /></p>
+        <p class="form-field-custom">{{ form.power_rating }}<br /></p>
+        <button type="submit" class="btn btn-dark">Submit</button>
+      </div>
+      </div>
+    </div>
+  </form>
+</div>
+</div>
+{% endblock %}

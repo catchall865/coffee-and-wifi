@@ -1,0 +1,96 @@
+:root {
+  --primary-color: #ede4e0;
+  --secondary-color: #c8dbbe;
+  --accent-color: #9f8772;
+  --text-color-dark: #665a48;
+  --body-font: "Barlow Semi Condensed", sans-serif;
+  --heading-font: "Libre Franklin", sans-serif;
+}
+
+html,
+body {
+  height: 100%;
+  background-color: var(--primary-color);
+  font-family: var(--body-font);
+}
+
+
+.form-label-custom {
+  font-size: 1.8rem;
+  font-family: var(--heading-font);
+}
+
+.intro-bg {
+  background-image: url("https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fcmkt-image-prd.global.ssl.fastly.net%2F0.1.0%2Fps%2F1066312%2F3392%2F2304%2Fm1%2Ffpnw%2Fwm0%2Fimg_0827-.jpg%3F1457451475%26s%3Dc5c6a203714e0e34db02f0b38e2d6b6c&f=1&nofb=1&ipt=eb8bb942f00e18fb152fd3790e55c2b238c6074b69cfda2ecf978c0659984f14&ipo=images");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 300px;
+  filter: brightness(70%);
+  margin: 0 0 0 0;
+}
+
+.intro-container {
+  position: relative;
+  width: 100%;
+  height: 300px;
+  margin: 0 0 0 0;
+}
+
+.intro-text {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 1;
+  color: white;
+  padding: 0 12px 0 12px;
+  font-size: 5rem;
+}
+
+.stores-list {
+  font-size: 1.8rem;
+}
+
+.store-list-row {
+  padding: 5px 25px;
+}
+
+.store-list-header {
+  font-family: var(--heading-font);
+}
+
+.table-alt {
+  padding: 25px;
+  width: 30%;
+  background-color: var(--accent-color);
+  color: var(--secondary-color);
+}
+
+.main-list {
+  padding-top: 25px;
+  width: 100%;
+  height: 100%;
+  background-image: url("https://images.freecreatives.com/wp-content/uploads/2015/04/white-paper-texture-with-flecks.jpg");
+  background-size: cover;
+  background-repeat: no-repeat;
+  position: relative;
+  padding-left: 0px;
+  padding-right: 0px;
+}
+
+.main-form {
+  padding: 25px;
+  width: 100%;
+  height: 100%;
+  background-image: url("https://images.freecreatives.com/wp-content/uploads/2015/04/white-paper-texture-with-flecks.jpg");
+  background-size: cover;
+  background-repeat: no-repeat;
+  position: relative;
+  padding-left: 0px;
+  padding-right: 0px;
+}

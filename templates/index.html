@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+{% extends 'base.html' %} {% block content %}
+<div class="container-fluid intro-container">
+  <div class="intro-bg container-fluid">
+    {% with messages = get_flashed_messages() %} {% if messages %} {% for
+    message in messages %}
+    <div class="alert alert-success alert-dismissible fade show" role="alert">
+      {{ message }}
+      <button
+        type="button"
+        class="btn-close"
+        data-bs-dismiss="alert"
+        aria-label="Close"
+      ></button>
+    </div>
+    {% endfor %} {% endif %} {% endwith %}
+  </div>
+  <div class="intro-text">
+    <p>HOME</p>
+  </div>
+</div>
+
+{% if not current_user.is_authenticated %}
+<div class="container-fluid main-list">
+  <div class="container-fluid table-alt">
+    <h1>
+      Looks like you don't have an account or haven't logged in. Once you have
+      logged in, this is where your saved workspaces will show up.
+    </h1>
+  </div>
+</div>
+
+{% else %}
+<div class="container-fluid main-list">
+  <div class="table-responsive">
+    <table class="table table-striped table-dark table-hover stores-list">
+      <thead>
+        <tr>
+          <th class="store-list-row store-list-header" scope="col">Name</th>
+          <th class="store-list-row store-list-header" scope="col">Maps URL</th>
+          <th class="store-list-row store-list-header" scope="col">Seating</th>
+          <th class="store-list-row store-list-header" scope="col">
+            Wifi Rating
+          </th>
+          <th class="store-list-row store-list-header" scope="col">
+            Outlet Availability
+          </th>
+          <th class="store-list-row store-list-header" scope="col">
+            Date Added
+          </th>
+        </tr>
+      </thead>
+      <tbody>
+        {% for store in stores %}
+        <tr>
+          <td class="store-list-row">{{ store.name }}</td>
+          <td class="store-list-row">
+            <a href="{{ store.maps_url }}">Click here</a>
+          </td>
+          <td class="store-list-row">{{ store.seating }}</td>
+          <td class="store-list-row">{{ store.wifi_rating }}</td>
+          <td class="store-list-row">{{ store.power_rating }}</td>
+          <td class="store-list-row">
+            {{ store.date_added.strftime("%B %d, %Y") }}
+          </td>
+        </tr>
+        {% endfor %} {% endif %}
+      </tbody>
+    </table>
+  </div>
+</div>
+
+{% endblock %}
