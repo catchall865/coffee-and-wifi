@@ -131,8 +131,7 @@ def login():
             else:
                 login_user(user)
                 flash("Login successful!")
-                stores = Store.query.all()
-                return render_template('index.html', all_stores=stores)
+                return redirect(url_for('home'))
         return redirect(url_for('login'))
 
 @app.route('/logout')

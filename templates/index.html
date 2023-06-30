@@ -21,14 +21,7 @@
 </div>
 
 {% if not current_user.is_authenticated %}
-<div class="container-fluid main-list">
-  <div class="container-fluid table-alt">
-    <h1>
-      Looks like you don't have an account or haven't logged in. Once you have
-      logged in, this is where your saved workspaces will show up.
-    </h1>
-  </div>
-</div>
+
 
 <div class="container-fluid main-list">
   <div class="table-responsive">
@@ -50,6 +43,14 @@
         </tr>
       </thead>
     </table>
+  </div>
+  <div class="container-fluid main-list">
+    <div class="container-fluid table-alt">
+      <h1>
+        Looks like you don't have an account or haven't logged in. Once you have
+        logged in, this is where your saved workspaces will show up.
+      </h1>
+    </div>
   </div>
 </div>
 
@@ -81,8 +82,16 @@
             <a href="{{ store.maps_url }}">Click here</a>
           </td>
           <td class="store-list-row">{{ store.seating }}</td>
-          <td class="store-list-row">{{ store.wifi_rating }}</td>
-          <td class="store-list-row">{{ store.power_rating }}</td>
+          <td class="store-list-row">
+            {% for i in range(store.wifi_rating) %}
+            🌐
+            {% endfor %}
+          </td>
+          <td class="store-list-row">
+            {% for i in range(store.power_rating) %}
+            🔌
+            {% endfor %}
+          </td>
           <td class="store-list-row">
             {{ store.date_added.strftime("%B %d, %Y") }}
           </td>

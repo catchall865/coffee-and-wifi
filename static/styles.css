@@ -95,12 +95,12 @@ body {
 .table-alt {
   padding: 25px;
   width: 30%;
-  background-color: var(--accent-color);
-  color: var(--secondary-color);
+  background-color: #212529;
+  color: white;
 }
 
 .main-list {
-  padding-top: 25px;
+  padding-top: 0px;
   width: 100%;
   height: 100%;
   background-image: url("https://images.freecreatives.com/wp-content/uploads/2015/04/white-paper-texture-with-flecks.jpg");
